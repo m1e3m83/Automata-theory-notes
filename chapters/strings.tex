@@ -24,5 +24,148 @@ $\lambda$
 \begin{align*}
     &\Sigma^* = \left\{ \omega |\text{باشد}\Sigma \text{زیر رشته متناهی از }\omega \right\}\\
     &\Sigma^\omega = \left\{ \omega |\text{باشد}\Sigma \text{زیر رشته نامتناهی از }\omega \right\}\\
-    &\Sigma^\infty = \Sigma^* \wedge \Sigma^\omega
+    &\Sigma^\infty = \Sigma^* \cup \Sigma^\omega
 \end{align*}
+
+در این درس به طور معمول تنها راجب رشته‌های با طول متناهی صحبت میکنیم.
+
+\textbf{اعمال روی رشته‌ها:}
+برای رشته دلخواه 
+$\phi$
+و
+$\rho$
+اعمال زیرتعریف میشوند.
+
+اضافه کردن انتهای رشته دوم را به رشته اول به صورت
+$\phi.\rho$
+نشان میدهیم.
+بر اساس این تعریف:
+
+\begin{align*}
+    \phi^n = \begin{cases}
+        \epsilon \quad ,n = 0\\
+        \phi . \phi^{n-1} \quad, n>0
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \phi^R = \begin{cases}
+        \epsilon \quad, |\phi| = 0\\
+        a.\omega \quad, |\phi| > 0, \ \phi = \omega.a
+    \end{cases} 
+\end{align*}
+
+\textbf{زبان:}
+اگر 
+$\Sigma^*$
+مجموعه همه رشته‌های متنهای با الفبای
+$\Sigma$
+باشد به هر زیرمجموعه
+$L \subseteq \Sigma^*$  
+یک زبان از الفبای
+$\Sigma$    
+میگویند.
+
+\begin{example}
+    مثال: برای الفبای 
+    $\Sigma = \{a, b, c\}$
+    زبان های
+    $L_1 = \{a, ab\}$
+    و
+    $L_2 = \{a^nb^n| n \geq 0\}$
+    را میتوان تعریف کرد.
+\end{example}
+
+مجموعه‌های 
+$\epsilon = \{\epsilon\}$
+و
+$\varnothing$
+نیز،‌ هردو زبان هستند.
+
+\textbf{اپراتور ها روی زبان‌ها:}
+\begin{enumerate}
+    \item اپراتور های مجموعه‌ها
+    \item اپراتور های رشته ها: 
+    \begin{align*}
+        L_1.L_2 = \{\omega . \phi | \omega \in L_1 \wedge \phi \in L_2\}\\
+    \end{align*}
+
+    این اپراتور خاصیت جابه‌جایی ندارد ولی
+
+    \begin{align*}
+        &(L_1.L_2).L_3 = L_1.(L_2.L_3) \\
+        &L.\epsilon = \epsilon. L = L \qquad \text{(عضو خنثی)}\\
+        &L.\varnothing = \varnothing.L = \varnothing\qquad \text{(عضو غالب)}
+    \end{align*}
+
+    برای آن برقرار است.
+
+    \begin{align*}
+        L^R = \{\omega^R | \omega \in L\}\\
+        L^n = \{\omega^n | \omega \in L\}
+    \end{align*}
+
+    \item اپراتور ستاره کلینی:
+    (مجموعه تمامی رشته‌هایی که اگر آنهارا به چند قطعه تقسیم کنیم هر قطعه عضو زبان باشد)
+
+    \begin{align*}
+        L^* = L^0 \cup L^1 \cup \dots\\
+        L^+ = L^1 \cup L^2 \cup \dots\\
+    \end{align*}
+
+    واضح است که 
+    $L^+ \subseteq L^*$
+    و حالت تساوی صرفا در زمانی رخ میدهد که زبان
+    $L$
+    شامل رشته
+    $\epsilon$
+    باشد.
+\end{enumerate}
+
+\textbf{
+    گرامر:
+}
+
+یک گرامر صوری چهارتایی
+$G = <V, \Sigma, S, P>$
+که در آن
+$V$
+مجموعه همه متغیر‌ها است،
+$\Sigma$
+مجموعه متهاهی ثابت ها
+(الفبا)
+،
+$S$
+متغیر شروع و 
+$P$
+مجموعه قواعد است.
+
+هر قاعده 
+$p$
+به شکل زوج مرتب
+$\alpha \rightarrow \beta$
+است که در آن:
+
+\begin{align*}
+    &\alpha \in (V \cup \Sigma)^+\\
+    &\beta \in (V \cup \Sigma)^*
+\end{align*}
+
+\begin{example}
+    مثال:
+
+    \begin{align*}
+        P:&\\
+        &A \rightarrow aABC\\
+        &A \rightarrow abc\\
+        &bB \rightarrow bb\\
+        &bC \rightarrow bc\\
+        &cC \rightarrow cc
+    \end{align*}
+\end{example}
+
+اگر 
+$G$
+یک گرامر باشد به مجموعه همه رشته‌های تولید شده با آن
+$L(G)$
+میگویند.
